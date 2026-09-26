@@ -72,6 +72,7 @@ pytest            # run the test suite
 
 This repository ships a Cloud Agent environment under `.cursor/`:
 
-- `.cursor/Dockerfile` installs the stable system toolchain (Python 3, pip, venv, git, curl).
-- `.cursor/install.sh` creates `.venv` and installs the project with dev extras.
-- `.cursor/environment.json` wires the two together.
+- `.cursor/install.sh` bootstraps the project: it ensures `python3-venv` is
+  available (installing it if the base image lacks it), creates `.venv`, and
+  installs the package with dev extras. It is idempotent and safe to re-run.
+- `.cursor/environment.json` points the environment's `install` step at that script.
