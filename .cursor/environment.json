@@ -1,0 +1,4 @@
+{
+  "name": "TradeLaunchGrokBot",
+  "install": "./.cursor/install.sh"
+}
